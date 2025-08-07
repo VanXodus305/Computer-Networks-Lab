@@ -27,8 +27,11 @@ int main()
     printf("Byte %d: %u\n", i, bytePtr[i]);
   }
 
-  unsigned int converted = ((bytePtr[0] << 24) | (bytePtr[1] << 16) | (bytePtr[2] << 8) | bytePtr[3]);
-  printf("Converted number (Endianness switched): %u\n", converted);
+  printf("Converted number (Endianness switched):\n");
+  for (int i = 0; i < sizeof(num); i++)
+  {
+    printf("Byte %d: %u\n", i, bytePtr[sizeof(num) - 1 - i]);
+  }
 
   return 0;
 }
